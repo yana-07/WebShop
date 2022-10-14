@@ -12,6 +12,7 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>Buy</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,12 @@
                 <td>@product.Price</td>
                 <td>@product.Quantity</td>
                 <td><button class="btn btn-success">Buy</button></td>
+                <td>
+                    <form method="post" asp-controller="Product" asp-action="Delete"> @*asp-route-id="@product.Id">*@
+                        <input type="hidden" value="@product.Id" name="id"/>
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                 </td>
             </tr>
         }
     </tbody>

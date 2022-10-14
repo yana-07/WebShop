@@ -12,5 +12,14 @@ namespace WebShop.Core.Contracts
         /// </summary>
         /// <returns>List of products</returns>
         Task<IEnumerable<ProductDto>> GetAllAsync();
+
+        /// <summary>
+        /// Add new product
+        /// </summary>
+        /// <param name="productDto">Product model</param>
+        /// <returns></returns>
+        Task AddAsync(ProductDto productDto);    
+
+        Task Delete(Guid id);
     }
 }
